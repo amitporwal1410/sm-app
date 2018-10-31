@@ -18,6 +18,9 @@ node {
     stage('Docker test'){
       sh 'echo /myfile.sh'
     }
+    stage('Clean Docker test'){
+      sh 'docker rmi sm-app'
+    }
   }
   catch (err) {
     throw err
