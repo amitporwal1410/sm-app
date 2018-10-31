@@ -16,7 +16,7 @@ node {
       sh 'docker run -d -p 80:80 myc:latest'
     }
     stage('Docker test'){
-      sh '/myfile.sh'
+      sh 'echo 1'
     }
   }
   catch (err) {
