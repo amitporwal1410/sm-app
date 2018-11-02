@@ -7,7 +7,6 @@ node {
       bat 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
       bat 'docker -v'
-      bat 'printenv'
     }
     stage('Build Docker'){
      bat 'docker build -t myc .'
