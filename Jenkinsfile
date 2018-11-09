@@ -4,21 +4,21 @@ node {
       checkout scm
     }
     stage('Environment') {
-      bat 'git --version'
+      sh 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
-      bat 'docker -v'
+      sh 'docker -v'
     }
     stage('Build Docker'){
-     bat 'docker build -t myc .'
+     sh 'docker build -t myc .'
     }
     stage('Docker run'){
-      bat 'docker run -d -p 80:80 myc:latest'
+      sh 'docker run -d -p 80:80 myc:latest'
     }
     stage('Docker test'){
-      bat 'echo /myfile.sh'
+      sh 'echo /myfile.sh'
     }
     stage('Clean Docker test'){
-      bat 'docker rmi sm-app'
+      sh 'docker rmi sm-app'
     }
   }
   catch (err) {
