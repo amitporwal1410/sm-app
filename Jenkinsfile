@@ -9,10 +9,10 @@ node {
       sh 'docker -v'
     }
     stage('Build Docker'){
-     sh 'docker build -t myc .'
+     sh 'docker build -t devopsadvanced .'
     }
     stage('Docker run'){
-      sh 'docker run -d -p 80:80 myc:latest'
+      sh 'docker run -d -p 80:80 devopsadvanced:latest'
     }
     stage('Docker test'){
       sh 'echo /myfile.sh'
